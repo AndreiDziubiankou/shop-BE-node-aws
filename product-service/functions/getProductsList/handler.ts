@@ -1,6 +1,6 @@
 import { EventAPIGatewayProxyEvent, formatJSONResponse } from '@libs/api-gateway';
 import { DynamoDBClient,  } from '@aws-sdk/client-dynamodb';
-import { Product, Stock } from 'src/scripts/mockData';
+import { Product, Stock } from 'product-service/scripts/mockData';
 import { DynamoDBDocumentClient, ScanCommand } from '@aws-sdk/lib-dynamodb';
 
 const dbClient = new DynamoDBClient({});
@@ -19,7 +19,7 @@ const getProductsList : EventAPIGatewayProxyEvent = async () => {
     products: products.map(product => {
       return { ...product, stock: stocks.find(stock => product.id === stock.product_id).count}
     })
-  });
+  }, 200);
 };
 
 export const main = getProductsList;

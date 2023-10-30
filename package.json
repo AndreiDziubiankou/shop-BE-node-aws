@@ -4,17 +4,23 @@
   "description": "Serverless aws-nodejs-typescript template",
   "main": "serverless.ts",
   "scripts": {
-    "deploy": "sls deploy",
-    "fill-tables": "ts-node src/scripts/fillProducts.ts"
+    "deploy-product-service": "cd product-service && sls deploy",
+    "deploy-import-service": "cd import-service && sls deploy",
+    "fill-tables": "ts-node product-service/scripts/fillProducts.ts"
   },
   "engines": {
     "node": ">=14.15.0"
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.433.0",
+    "@aws-sdk/client-s3": "^3.438.0",
     "@aws-sdk/lib-dynamodb": "^3.433.0",
     "@middy/core": "^3.4.0",
     "@middy/http-json-body-parser": "^3.4.0",
+    "aws-sdk": "^2.1483.0",
+    "csv-parser": "^3.0.0",
+    "streaming-s3": "^0.4.5",
+    "strip-bom-stream": "^5.0.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

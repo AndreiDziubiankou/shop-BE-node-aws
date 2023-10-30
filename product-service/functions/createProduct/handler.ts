@@ -1,6 +1,6 @@
 import { EventAPIGatewayProxyEvent, formatJSONResponse } from '@libs/api-gateway';
 import { DynamoDBClient,  } from '@aws-sdk/client-dynamodb';
-import { Product } from 'src/scripts/mockData';
+import { Product } from 'product-service/scripts/mockData';
 import { DynamoDBDocumentClient, TransactWriteCommand } from '@aws-sdk/lib-dynamodb';
 
 const dbClient = new DynamoDBClient({});
@@ -45,7 +45,7 @@ const getProductsById : EventAPIGatewayProxyEvent = async (event) => {
 
     return formatJSONResponse({
       product: productBody
-    });
+    }, 200);
   }
   
 };
