@@ -16,7 +16,8 @@ const serverlessConfiguration: AWS = {
       shouldStartNameWithService: true,
     },
     environment: {
-      S3_BUCKET: 'adziubiankou-aws-import-servise-storage'
+      S3_BUCKET: 'adziubiankou-aws-import-servise-storage',
+      SQS_URL: 'https://sqs.eu-west-1.amazonaws.com/747719121619/catalogItemsQueue'
     },
     httpApi: {
       cors: true
@@ -33,6 +34,9 @@ const serverlessConfiguration: AWS = {
             's3:PutObjectTagging',
             's3:DeleteObject'],
           Resource: 'arn:aws:s3:::adziubiankou-aws-import-servise-storage/*',
+        },{
+          Effect: 'Allow', Action: ['sqs:*'],
+          Resource: 'arn:aws:sqs:eu-west-1:747719121619:catalogItemsQueue',
         }]
       }
     }

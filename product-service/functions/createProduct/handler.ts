@@ -3,7 +3,7 @@ import { DynamoDBClient,  } from '@aws-sdk/client-dynamodb';
 import { Product } from 'product-service/scripts/mockData';
 import { DynamoDBDocumentClient, TransactWriteCommand } from '@aws-sdk/lib-dynamodb';
 
-const dbClient = new DynamoDBClient({});
+const dbClient = new DynamoDBClient({ region: 'eu-west-1' });
 const docDbClient = DynamoDBDocumentClient.from(dbClient);
 
 const getProductsById : EventAPIGatewayProxyEvent = async (event) => {
