@@ -19,9 +19,6 @@ const serverlessConfiguration: AWS = {
       S3_BUCKET: 'adziubiankou-aws-import-servise-storage',
       SQS_URL: 'https://sqs.eu-west-1.amazonaws.com/747719121619/catalogItemsQueue'
     },
-    httpApi: {
-      cors: true
-    },
     iam: {
       role: {
         statements: [{

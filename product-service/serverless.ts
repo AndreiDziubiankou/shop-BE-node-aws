@@ -24,9 +24,6 @@ const serverlessConfiguration: AWS = {
       STOCKS_TABLE: 'stocks',
       SNS_ARN: {Ref:'createProductTopic'}
     },
-    httpApi: {
-      cors: true
-    },
     iam: {
       role: {
         statements: [{

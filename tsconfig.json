@@ -11,7 +11,7 @@
     "outDir": "lib",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["product-service/**/*.ts", "import-service/**/*.ts"],
+  "include": ["product-service/**/*.ts", "import-service/**/*.ts", "authorization-service/**/*.ts"],
   "exclude": [
     "node_modules/**/*",
     ".serverless/**/*",
