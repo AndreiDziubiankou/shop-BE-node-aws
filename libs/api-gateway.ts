@@ -9,8 +9,6 @@ export const formatJSONResponse = (bodyData: Record<string, unknown> | string, s
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': '*',
       'Access-Control-Allow-Headers': '*',
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Credentials': true,
     },
     body: JSON.stringify(bodyData)
   }
@@ -23,8 +21,6 @@ export const formatErrorResponse = (errorMessage: string, statusCode: number) =>
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': '*',
       'Access-Control-Allow-Headers': '*',
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Credentials': true,
     },
     body: JSON.stringify(errorMessage)
   }
